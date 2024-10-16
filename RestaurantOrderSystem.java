@@ -1,3 +1,8 @@
+/*
+James Arnold S. Nieves
+October 5, 2024
+Restaurant Order System
+*/
 import java.util.Scanner;
 
 public class RestaurantOrderSystem {
@@ -6,10 +11,10 @@ public class RestaurantOrderSystem {
         int menuItem, quantity;
         double total = 0;
 
-        // Display the menu
-        System.out.println("-----------------------");
-        System.out.println("\tMENU");
-        System.out.println("-----------------------");
+        // The menu
+        System.out.println("----------------------");
+        System.out.println("\t\tMENU");
+        System.out.println("----------------------");
         System.out.println("1. Burger    - PHP 100");
         System.out.println("2. Fries     - PHP 50");
         System.out.println("3. Soda      - PHP 30");
@@ -17,25 +22,25 @@ public class RestaurantOrderSystem {
         System.out.println("5. Exit");
         System.out.print("\nPlease select an item by entering the corresponding number: ");
 
-        // Get user input for menu selection
+        // user put a order
         menuItem = scanner.nextInt();
 
-        // Exit condition
+        // exit condition
         if (menuItem == 5) {
             System.out.println("Thank you for visiting!");
         } else if (menuItem < 1 || menuItem > 5) {
-            // Validate menu selection
+            // validate menu selection
             System.out.println("Invalid selection. Please choose a valid menu item.");
         } else {
-            // Get user input for quantity
+            // get user input for quantity
             System.out.print("\nEnter the quantity: ");
             quantity = scanner.nextInt();
 
-            // Validate quantity input
+            // validate quantity input
             if (quantity <= 0) {
                 System.out.println("Invalid quantity. Please enter a positive integer.");
             } else {
-                // Calculate the total amount based on the selection
+                // Calculate the total amount with the quantify
                 switch (menuItem) {
                     case 1:
                         total = 100 * quantity;
@@ -47,7 +52,7 @@ public class RestaurantOrderSystem {
                         total = 30 * quantity;
                         break;
                     case 4:
-                        total = 45 * quantity;
+                        total = 45 + quantity;
                         break;
                 }
 
